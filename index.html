@@ -1,0 +1,372 @@
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juan Maldonado | Dev</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@300;400;500&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/8db3d0c1d2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cursor personalizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Ruido de fondo -->
+    <div class="noise"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">JM<span class="logo-dot">.</span></div>
+        <ul class="nav-links">
+            <li><a href="#inicio" class="nav-link" data-text="Inicio">Inicio</a></li>
+            <li><a href="#sobre-mi" class="nav-link" data-text="Sobre mí">Sobre mí</a></li>
+            <li><a href="#habilidades" class="nav-link" data-text="Skills">Skills</a></li>
+            <li><a href="#proyectos" class="nav-link" data-text="Proyectos">Proyectos</a></li>
+            <li><a href="#contacto" class="nav-link" data-text="Contacto">Contacto</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#inicio" class="mobile-link">Inicio</a></li>
+            <li><a href="#sobre-mi" class="mobile-link">Sobre mí</a></li>
+            <li><a href="#habilidades" class="mobile-link">Skills</a></li>
+            <li><a href="#proyectos" class="mobile-link">Proyectos</a></li>
+            <li><a href="#contacto" class="mobile-link">Contacto</a></li>
+        </ul>
+    </div>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <!-- Elementos flotantes decorativos -->
+        <div class="float-el float-1"><i class="fa-brands fa-python"></i></div>
+        <div class="float-el float-2"><i class="fa-solid fa-code"></i></div>
+        <div class="float-el float-3"><i class="fa-solid fa-database"></i></div>
+        <div class="float-el float-4"><i class="fa-solid fa-terminal"></i></div>
+        <div class="float-el float-5"><i class="fa-solid fa-microchip"></i></div>
+
+        <!-- Líneas decorativas -->
+        <div class="grid-lines">
+            <div></div><div></div><div></div><div></div><div></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-tag">
+                <span class="dot-pulse"></span>
+                Disponible para trabajar
+            </div>
+            <h1 class="hero-title">
+                <span class="line-reveal">Desarrollador</span>
+                <span class="line-reveal delay-1"><em>de Software</em></span>
+            </h1>
+            <p class="hero-sub line-reveal delay-2">
+                Python · C# · Automatización Industrial
+            </p>
+            <div class="hero-cta line-reveal delay-3">
+                <a href="#proyectos" class="btn-primary">
+                    <span>Ver Proyectos</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#contacto" class="btn-ghost">Hablemos</a>
+            </div>
+            <div class="social-row line-reveal delay-4">
+                <a href="#" class="social-icon" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-icon" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-icon" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="code-window">
+                <div class="win-bar">
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+                    <span class="win-title">main.py</span>
+                </div>
+                <pre class="code-block"><code><span class="c-kw">class</span> <span class="c-cl">JuanMaldonado</span>:
+    <span class="c-fn">def</span> <span class="c-fn">__init__</span>(self):
+        self.rol = <span class="c-str">"Dev Software"</span>
+        self.skills = [
+            <span class="c-str">"Python"</span>, <span class="c-str">"C#"</span>,
+            <span class="c-str">"Flask"</span>, <span class="c-str">"MySQL"</span>
+        ]
+        self.disponible = <span class="c-kw">True</span>
+
+    <span class="c-fn">def</span> <span class="c-fn">contactar</span>(self):
+        <span class="c-kw">return</span> <span class="c-str">"¡Trabajemos juntos!"</span>
+
+<span class="c-cm"># Inicializar 🚀</span>
+dev = <span class="c-cl">JuanMaldonado</span>()
+<span class="c-fn">print</span>(dev.contactar())</code></pre>
+            </div>
+        </div>
+
+        <div class="scroll-hint">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- SOBRE MÍ -->
+    <section id="sobre-mi" class="about">
+        <div class="section-number">01</div>
+        <div class="about-inner">
+            <div class="about-text">
+                <h2 class="section-title">Sobre <em>mí</em></h2>
+                <p class="about-lead">
+                    Soy un desarrollador apasionado por crear soluciones reales que automatizan y optimizan procesos complejos.
+                </p>
+                <p class="about-body">
+                    Con experiencia en Python, C# y automatización industrial, disfruto transformar problemas del mundo real en software eficiente. Me especializo en sistemas de gestión, bots inteligentes y aplicaciones de escritorio.
+                </p>
+                <div class="about-stats">
+                    <div class="stat">
+                        <span class="stat-num">+5</span>
+                        <span class="stat-label">Proyectos<br>completados</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">3+</span>
+                        <span class="stat-label">Años de<br>experiencia</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">100%</span>
+                        <span class="stat-label">Dedicación al<br>cliente</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="image-frame">
+                    <div class="placeholder-avatar">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <div class="frame-accent"></div>
+                    <div class="frame-accent-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HABILIDADES -->
+    <section id="habilidades" class="skills">
+        <div class="section-number">02</div>
+        <h2 class="section-title center">Stack <em>Tecnológico</em></h2>
+        <p class="section-sub center">Herramientas y tecnologías con las que trabajo a diario</p>
+
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-code"></i> Lenguajes</h3>
+                <div class="skill-items">
+                    <div class="skill-pill"><i class="fa-brands fa-python"></i> Python</div>
+                    <div class="skill-pill">C#</div>
+                    <div class="skill-pill">JavaScript</div>
+                    <div class="skill-pill">SQL</div>
+                    <div class="skill-pill">HTML/CSS</div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-layer-group"></i> Frameworks</h3>
+                <div class="skill-items">
+                    <div class="skill-pill">Flask</div>
+                    <div class="skill-pill">.NET</div>
+                    <div class="skill-pill">Selenium</div>
+                    <div class="skill-pill">BeautifulSoup</div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-database"></i> Datos & DevOps</h3>
+                <div class="skill-items">
+                    <div class="skill-pill">MySQL</div>
+                    <div class="skill-pill">SQLite</div>
+                    <div class="skill-pill">Git</div>
+                    <div class="skill-pill">Docker</div>
+                </div>
+            </div>
+            <div class="skill-category">
+                <h3><i class="fa-solid fa-gears"></i> Especialidades</h3>
+                <div class="skill-items">
+                    <div class="skill-pill">Automatización</div>
+                    <div class="skill-pill">Web Scraping</div>
+                    <div class="skill-pill">APIs REST</div>
+                    <div class="skill-pill">Desktop Apps</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="projects">
+        <div class="section-number">03</div>
+        <h2 class="section-title">Proyectos <em>Destacados</em></h2>
+        <p class="section-sub">Soluciones reales para problemas reales</p>
+
+        <div class="projects-list">
+
+            <article class="project-featured">
+                <div class="project-info">
+                    <span class="project-number">01</span>
+                    <h3>Evolution Copiadoras</h3>
+                    <p>Sistema integral de gestión para empresa de fotocopiadoras. Controla lecturas de contadores, genera facturas automáticas y administra clientes con panel de control completo.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>MySQL</span>
+                        <span>Bootstrap</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="link-btn"><i class="fa-brands fa-github"></i> Código</a>
+                        <a href="#" class="link-btn link-live"><i class="fa-solid fa-arrow-up-right-from-square"></i> Demo</a>
+                    </div>
+                </div>
+                <div class="project-visual">
+                    <div class="project-mockup">
+                        <div class="mockup-header">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="mockup-body">
+                            <div class="mock-sidebar">
+                                <div class="mock-item active"></div>
+                                <div class="mock-item"></div>
+                                <div class="mock-item"></div>
+                                <div class="mock-item"></div>
+                            </div>
+                            <div class="mock-content">
+                                <div class="mock-card"><div class="mock-num"></div><div class="mock-label"></div></div>
+                                <div class="mock-card"><div class="mock-num"></div><div class="mock-label"></div></div>
+                                <div class="mock-table">
+                                    <div class="mock-row header"></div>
+                                    <div class="mock-row"></div>
+                                    <div class="mock-row"></div>
+                                    <div class="mock-row"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="project-featured reverse">
+                <div class="project-info">
+                    <span class="project-number">02</span>
+                    <h3>Instagram Automation Bot</h3>
+                    <p>Bot de automatización para Instagram con gestión avanzada de sesiones, rotación de proxies y control anti-ban. Automatiza likes, follows y comentarios con comportamiento humano simulado.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Selenium</span>
+                        <span>SQLite</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="link-btn"><i class="fa-brands fa-github"></i> Código</a>
+                    </div>
+                </div>
+                <div class="project-visual">
+                    <div class="project-mockup dark">
+                        <div class="mockup-header">
+                            <span></span><span></span><span></span>
+                        </div>
+                        <div class="mockup-body terminal-style">
+                            <div class="term-line"><span class="term-green">✓</span> Session loaded</div>
+                            <div class="term-line"><span class="term-blue">→</span> Navigating feed...</div>
+                            <div class="term-line"><span class="term-green">✓</span> Like action: post_001</div>
+                            <div class="term-line"><span class="term-green">✓</span> Follow: @user_xyz</div>
+                            <div class="term-line blink"><span class="term-yellow">⚡</span> Running... <span class="cursor-blink">|</span></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Mini proyectos -->
+            <div class="mini-projects">
+                <h3 class="mini-title">Otros Proyectos</h3>
+                <div class="mini-grid">
+                    <article class="mini-card">
+                        <div class="mini-icon"><i class="fa-solid fa-chart-line"></i></div>
+                        <h4>Dashboard Analytics</h4>
+                        <p>Panel de métricas en tiempo real con gráficos interactivos.</p>
+                        <span>Python · Chart.js</span>
+                    </article>
+                    <article class="mini-card">
+                        <div class="mini-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+                        <h4>Email Scraper</h4>
+                        <p>Extractor masivo de contactos con exportación a Excel.</p>
+                        <span>Python · BeautifulSoup</span>
+                    </article>
+                    <article class="mini-card">
+                        <div class="mini-icon"><i class="fa-solid fa-file-invoice"></i></div>
+                        <h4>Facturación AFIP</h4>
+                        <p>Integración con API de AFIP para facturación electrónica.</p>
+                        <span>Python · REST API</span>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contact">
+        <div class="section-number">04</div>
+        <div class="contact-inner">
+            <div class="contact-text">
+                <h2 class="section-title">¿Trabajamos <em>juntos?</em></h2>
+                <p>Estoy disponible para proyectos freelance, trabajo full-time o cualquier consulta técnica. No dudes en escribirme.</p>
+                <div class="contact-info">
+                    <a href="mailto:juan@email.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>juan@email.com</span>
+                    </a>
+                    <a href="#" class="contact-item">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                        <span>linkedin.com/in/juanmaldonado</span>
+                    </a>
+                    <a href="#" class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <span>github.com/juanmaldonado</span>
+                    </a>
+                </div>
+            </div>
+            <form class="contact-form" id="contact-form">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Tu nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="tu@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea rows="5" placeholder="Contame sobre tu proyecto..." required></textarea>
+                </div>
+                <button type="submit" class="btn-primary full-width">
+                    <span>Enviar mensaje</span>
+                    <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="logo">JM<span class="logo-dot">.</span></div>
+            <p>© 2024 Juan Maldonado · Hecho con <i class="fa-solid fa-heart"></i> en Argentina</p>
+            <div class="footer-links">
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
