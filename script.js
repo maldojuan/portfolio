@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const btn  = form.querySelector('button[type="submit"]');
             const span = btn.querySelector('span');
-            const icon = btn.querySelector('i');
+            const icon = form.querySelector('button[type="submit"] i');
 
             btn.disabled = true;
             span.textContent = 'Enviando...';
