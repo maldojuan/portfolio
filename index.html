@@ -315,39 +315,46 @@ dev = <span class="c-cl">JuanMaldonado</span>()
             <div class="contact-text">
                 <h2 class="section-title">¿Trabajamos <em>juntos?</em></h2>
                 <p>Estoy disponible para proyectos freelance, trabajo full-time o cualquier consulta técnica. No dudes en escribirme.</p>
-                <div class="contact-info">
-                    <a href="mailto:maldojuanesba+portfolio@gmail.com" class="contact-item">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span>maldojuanesba+portfolio@gmail.com</span>
-                    </a>
-                    <a href="https://linkedin.com/in/juan-maldonado-103205353" target="_blank" rel="noopener" class="contact-item">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                        <span>linkedin.com/in/juan-maldonado-103205353</span>
-                    </a>
-                    <a href="https://github.com/maldojuan" target="_blank" rel="noopener" class="contact-item">
-                        <i class="fa-brands fa-github"></i>
-                        <span>github.com/maldojuan</span>
-                    </a>
-                </div>
+               <div class="contact-info">
+    <a href="https://mail.google.com/mail/?view=cm&to=maldojuanesba+portfolio@gmail.com" target="_blank" rel="noopener" class="contact-item" title="Mandame un mail">
+        <i class="fa-solid fa-envelope"></i>
+        <span>Mandame un mail</span>
+    </a>
+    <a href="https://linkedin.com/in/juan-maldonado-103205353" target="_blank" rel="noopener" class="contact-item" title="Mirá mi LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+        <span>Mirá mi LinkedIn</span>
+    </a>
+    <a href="https://github.com/maldojuan" target="_blank" rel="noopener" class="contact-item" title="Mirá mi GitHub">
+        <i class="fa-brands fa-github"></i>
+        <span>Mirá mi GitHub</span>
+    </a>
+</div>
             </div>
-            <form class="contact-form" id="contact-form">
+            <!-- ✅ FORMSPREE INTEGRADO -->
+            <form 
+                class="contact-form" 
+                id="contact-form"
+                action="https://formspree.io/f/mqejzpqd"
+                method="POST"
+            >
                 <div class="form-group">
                     <label>Nombre</label>
-                    <input type="text" placeholder="Tu nombre completo" required>
+                    <input type="text" name="nombre" placeholder="Tu nombre completo" required>
                 </div>
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="email" placeholder="tu@email.com" required>
+                    <input type="email" name="email" placeholder="tu@email.com" required>
                 </div>
                 <div class="form-group">
                     <label>Mensaje</label>
-                    <textarea rows="5" placeholder="Contame sobre tu proyecto..." required></textarea>
+                    <textarea rows="5" name="message" placeholder="Contame sobre tu proyecto..." required></textarea>
                 </div>
                 <button type="submit" class="btn-primary full-width">
                     <span>Enviar mensaje</span>
                     <i class="fa-solid fa-paper-plane"></i>
                 </button>
             </form>
+            <!-- ✅ FIN FORMSPREE -->
         </div>
     </section>
 

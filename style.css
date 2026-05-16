@@ -832,7 +832,18 @@ section { position: relative; padding: 7rem 8%; }
 }
 .contact-item i { color: var(--accent); width: 18px; text-align: center; }
 .contact-item:hover { color: var(--white); }
+.contact-item span {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+.contact-info {
+    display: flex;
+    gap: 24px;
+}
 
+.contact-item {
+    font-size: 1.5rem;
+}
 /* Form */
 .contact-form { display: flex; flex-direction: column; gap: 1.5rem; }
 .form-group { display: flex; flex-direction: column; gap: 8px; }

@@ -135,12 +135,13 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async e => {
             e.preventDefault();
             const btn  = form.querySelector('button[type="submit"]');
-            const span = btn.querySelector('span');
-            const icon = form.querySelector('button[type="submit"] i');
+            const span = btn?.querySelector('span');
+            const icon = btn?.querySelector('i');
 
+            if (!btn) return;
+            if (span) span.textContent = 'Enviando...';
+            if (icon) icon.className = 'fa-solid fa-spinner fa-spin';
             btn.disabled = true;
-            span.textContent = 'Enviando...';
-            icon.className = 'fa-solid fa-spinner fa-spin';
 
             try {
                 const res = await fetch('https://formspree.io/f/xjglqeyo', {
@@ -150,9 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         'Accept': 'application/json'
                     },
                     body: JSON.stringify({
-                        nombre:  form.querySelector('input[type="text"]').value,
-                        email:   form.querySelector('input[type="email"]').value,
-                        mensaje: form.querySelector('textarea').value,
+                        nombre:  form.querySelector('input[name="nombre"]')?.value || '',
+                        email:   form.querySelector('input[name="email"]')?.value || '',
+                        mensaje: form.querySelector('textarea[name="message"]')?.value || '',
                     }),
                 });
 
@@ -160,12 +161,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (res.ok) {
                     btn.style.background = '#00c49a';
-                    span.textContent = '¡Mensaje enviado!';
-                    icon.className   = 'fa-solid fa-check';
+                    if (span) span.textContent = '¡Mensaje enviado!';
+                    if (icon) icon.className = 'fa-solid fa-check';
                     form.reset();
                     setTimeout(() => {
-                        span.textContent     = 'Enviar mensaje';
-                        icon.className       = 'fa-solid fa-paper-plane';
+                        if (span) span.textContent = 'Enviar mensaje';
+                        if (icon) icon.className = 'fa-solid fa-paper-plane';
                         btn.style.background = '';
                         btn.disabled         = false;
                     }, 3000);
@@ -174,13 +175,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             } catch (err) {
                 console.error('Error Formspree:', err);
-                span.textContent     = 'Error, intentá de nuevo';
-                icon.className       = 'fa-solid fa-triangle-exclamation';
+                if (span) span.textContent = 'Error, intentá de nuevo';
+                if (icon) icon.className = 'fa-solid fa-triangle-exclamation';
                 btn.style.background = '#e74c3c';
                 btn.disabled         = false;
                 setTimeout(() => {
-                    span.textContent     = 'Enviar mensaje';
-                    icon.className       = 'fa-solid fa-paper-plane';
+                    if (span) span.textContent = 'Enviar mensaje';
+                    if (icon) icon.className = 'fa-solid fa-paper-plane';
                     btn.style.background = '';
                 }, 3000);
             }
