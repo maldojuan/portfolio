@@ -59,7 +59,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     hamburger.addEventListener('click', () => {
         mobileMenu.classList.toggle('open');
-        // Animar hamburger
         const spans = hamburger.querySelectorAll('span');
         if (mobileMenu.classList.contains('open')) {
             spans[0].style.transform = 'rotate(45deg) translate(5px,5px)';
@@ -130,60 +129,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
     stats.forEach(s => statsObserver.observe(s));
 
-  // ---- FORMULARIO ----
-const form = document.getElementById('contact-form');
-if (form) {
-    form.addEventListener('submit', async e => {
-        e.preventDefault();
-        const btn  = form.querySelector('button[type="submit"]');
-        const span = btn.querySelector('span');
-        const icon = btn.querySelector('i');
+    // ---- FORMULARIO FORMSPREE ----
+    const form = document.getElementById('contact-form');
+    if (form) {
+        form.addEventListener('submit', async e => {
+            e.preventDefault();
+            const btn  = form.querySelector('button[type="submit"]');
+            const span = btn.querySelector('span');
+            const icon = btn.querySelector('i');
 
-        btn.disabled = true;
-        span.textContent = 'Enviando...';
-        icon.className = 'fa-solid fa-spinner fa-spin';
+            btn.disabled = true;
+            span.textContent = 'Enviando...';
+            icon.className = 'fa-solid fa-spinner fa-spin';
 
-        try {
-            const res = await fetch('https://formspree.io/f/xjglqeyo', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-                body: JSON.stringify({
-                    nombre:  form.querySelector('input[type="text"]').value,
-                    email:   form.querySelector('input[type="email"]').value,
-                    mensaje: form.querySelector('textarea').value,
-                }),
-            });
+            try {
+                const res = await fetch('https://formspree.io/f/xjglqeyo', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        nombre:  form.querySelector('input[type="text"]').value,
+                        email:   form.querySelector('input[type="email"]').value,
+                        mensaje: form.querySelector('textarea').value,
+                    }),
+                });
 
-            const data = await res.json();
+                const data = await res.json();
 
-            if (res.ok) {
-                btn.style.background = '#00c49a';
-                span.textContent = '¡Mensaje enviado!';
-                icon.className   = 'fa-solid fa-check';
-                form.reset();
+                if (res.ok) {
+                    btn.style.background = '#00c49a';
+                    span.textContent = '¡Mensaje enviado!';
+                    icon.className   = 'fa-solid fa-check';
+                    form.reset();
+                    setTimeout(() => {
+                        span.textContent     = 'Enviar mensaje';
+                        icon.className       = 'fa-solid fa-paper-plane';
+                        btn.style.background = '';
+                        btn.disabled         = false;
+                    }, 3000);
+                } else {
+                    throw new Error(data?.error || 'Error del servidor');
+                }
+            } catch (err) {
+                console.error('Error Formspree:', err);
+                span.textContent     = 'Error, intentá de nuevo';
+                icon.className       = 'fa-solid fa-triangle-exclamation';
+                btn.style.background = '#e74c3c';
+                btn.disabled         = false;
                 setTimeout(() => {
                     span.textContent     = 'Enviar mensaje';
                     icon.className       = 'fa-solid fa-paper-plane';
                     btn.style.background = '';
-                    btn.disabled         = false;
                 }, 3000);
-            } else {
-                throw new Error(data?.error || 'Error del servidor');
             }
-        } catch (err) {
-            console.error('Error Formspree:', err);
-            span.textContent     = 'Error, intentá de nuevo';
-            icon.className       = 'fa-solid fa-triangle-exclamation';
-            btn.style.background = '#e74c3c';
-            btn.disabled         = false;
-            setTimeout(() => {
-                span.textContent     = 'Enviar mensaje';
-                icon.className       = 'fa-solid fa-paper-plane';
-                btn.style.background = '';
-            }, 3000);
-        }
-    });
-}
+        });
+    }
 
     // ---- ACTIVE NAV LINK ON SCROLL ----
     const sections = document.querySelectorAll('section[id]');
