@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     stats.forEach(s => statsObserver.observe(s));
 
-   // ---- FORMULARIO ----
+  // ---- FORMULARIO ----
 const form = document.getElementById('contact-form');
 if (form) {
     form.addEventListener('submit', async e => {
