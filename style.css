@@ -239,10 +239,16 @@ body {
 }
 
 .hero-title {
-    font-size: clamp(2.8rem, 5vw, 5rem);
+    font-size: clamp(2rem, 5vw, 5rem);
     font-weight: 800;
-    line-height: 1.05;
+    line-height: 1.08;
     margin-bottom: 1.5rem;
+    max-width: 100%;
+}
+.hero-title .line-reveal {
+    display: block;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 .hero-title em {
     font-style: italic;
@@ -907,14 +913,37 @@ section { position: relative; padding: 7rem 8%; }
 @media (max-width: 900px) {
     .hero {
         grid-template-columns: 1fr;
-        padding-top: 7rem;
-        gap: 3rem;
+        padding: 6.5rem 5% 4rem;
+        gap: 2rem;
+        min-height: auto;
         text-align: center;
+        overflow-x: hidden;
+    }
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+    .hero-title {
+        font-size: clamp(2rem, 10vw, 3.25rem);
+        line-height: 1.12;
+        margin-bottom: 1.25rem;
+    }
+    .hero-sub {
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        margin-bottom: 2rem;
+        padding: 0 0.25rem;
+    }
+    .hero-tag {
+        display: inline-flex;
+        font-size: 0.7rem;
+        margin-bottom: 1.5rem;
     }
     .hero-cta { justify-content: center; }
     .social-row { justify-content: center; }
-    .hero-tag { display: inline-flex; }
     .hero-visual { display: none; }
+    .scroll-hint { display: none; }
+    .float-el { opacity: 0.08; }
 
     .about-inner { grid-template-columns: 1fr; gap: 3rem; }
     .about-image { display: none; }
@@ -933,7 +962,38 @@ section { position: relative; padding: 7rem 8%; }
 
 @media (max-width: 600px) {
     section { padding: 5rem 6%; }
+    .hero {
+        padding: 5.5rem 6% 3rem;
+    }
+    .hero-title {
+        font-size: clamp(1.75rem, 9vw, 2.5rem);
+    }
+    .hero-sub {
+        font-size: 0.72rem;
+        letter-spacing: 0.5px;
+        line-height: 1.6;
+    }
+    .hero-cta {
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+    }
+    .hero-cta .btn-primary,
+    .hero-cta .btn-ghost {
+        width: 100%;
+        justify-content: center;
+    }
     .about-stats { gap: 1.5rem; }
     .footer-inner { flex-direction: column; text-align: center; }
     .mini-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 380px) {
+    .hero-title {
+        font-size: 1.65rem;
+    }
+    .hero-tag {
+        font-size: 0.65rem;
+        padding: 5px 10px;
+    }
 }
