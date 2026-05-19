@@ -1011,7 +1011,14 @@ section { position: relative; padding: 7rem 8%; }
     .float-el { opacity: 0.08; }
 
     .about-inner { grid-template-columns: 1fr; gap: 3rem; }
-    .about-image { display: none; }
+    .about-image {
+        display: flex;
+        justify-content: center;
+    }
+    .image-frame {
+        width: min(260px, 78vw);
+        height: min(316px, 95vw);
+    }
 
     .project-featured { grid-template-columns: 1fr; gap: 2.5rem; }
     .project-featured.reverse { direction: ltr; }
